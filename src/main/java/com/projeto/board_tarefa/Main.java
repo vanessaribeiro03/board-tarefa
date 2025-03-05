@@ -1,6 +1,7 @@
 package com.projeto.board_tarefa;
 
 import com.projeto.board_tarefa.persistence.migration.MigrationStrategy;
+import com.projeto.board_tarefa.ui.MainMenu;
 
 import java.sql.SQLException;
 
@@ -11,5 +12,6 @@ public class Main {
         try(var connection = getConnection()){
             new MigrationStrategy(connection).executeMigration();
         }
+        new MainMenu().execute();
     }
 }
